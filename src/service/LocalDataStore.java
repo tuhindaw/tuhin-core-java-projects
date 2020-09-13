@@ -14,16 +14,16 @@ public class LocalDataStore {
     public static List<Car> getAllCarDetail(){
 
         return Arrays.asList(
-                new Car(1,"PA101", "Honda", "Civic"),
-                new Car(2,"PA102", "Chevrolet", "Cruize"),
-                new Car(3,"PA103", "Honda", "Accord"),
+                new Car(1,"PA101", "Honda", "Civic", 5),
+                new Car(2,"PA102", "Chevrolet", "Cruize", 4),
+                new Car(3,"PA103", "Honda", "Accord", 5),
                 new Car(4,"PA104", "Audi", "X4"),
                 new Car(5,"PA105", "BMW", "C7"),
-                new Car(6,"PA106", "Honda", "Civic"),
-                new Car(7,"PA107", "Chevrolet", "Cruize"),
-                new Car(8,"PA108", "Honda", "Accord"),
-                new Car(9,"PA109", "Audi", "X4"),
-                new Car(10,"PA110", "BMW", "C7")
+                new Car(6,"PA106", "Honda", "HSedan", 8),
+                new Car(7,"PA107", "Chevrolet", "Cruize", 4),
+                new Car(8,"PA108", "Honda", "Accord", 5),
+                new Car(9,"PA109", "Audi", "X4", 8),
+                new Car(10,"PA110", "BMW", "C7", 8)
 
         );
 

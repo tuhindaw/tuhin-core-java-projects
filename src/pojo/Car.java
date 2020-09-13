@@ -8,6 +8,12 @@ public class Car {
     private String chasis;
     private String make;
     private String model;
+    private int sittingCapacity;
+
+    public Car(String make, int sittingCapacity) {
+        this.make = make;
+        this.sittingCapacity = sittingCapacity;
+    }
 
     public Car(int carId, String chasis, String make, String model) {
         this.carId = carId;
@@ -15,6 +21,15 @@ public class Car {
         this.make = make;
         this.model = model;
     }
+
+    public Car(int carId, String chasis, String make, String model, int sittingCapacity) {
+        this.carId = carId;
+        this.chasis = chasis;
+        this.make = make;
+        this.model = model;
+        this.sittingCapacity = sittingCapacity;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -63,6 +78,14 @@ public class Car {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public int getSittingCapacity() {
+        return sittingCapacity;
+    }
+
+    public void setSittingCapacity(int sittingCapacity) {
+        this.sittingCapacity = sittingCapacity;
     }
 
     @Override

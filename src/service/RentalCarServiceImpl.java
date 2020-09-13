@@ -82,11 +82,20 @@ public class RentalCarServiceImpl implements RentalCarService {
         //list of matching cars as per customer's preference
         List<Car> matchingCars = allCars.stream().
                 filter(t->t.getMake().equals(request.getCar().getMake()))
+                .filter(t->t.getSittingCapacity()>=request.getCar().getSittingCapacity())
                 .collect(Collectors.toList());
+
+        if(matchingCars.isEmpty()){
+            throw new RentalCarException("No matching cars as per the customer's preference is found");
+        }
 
         List<Car> availableCars = Optional.ofNullable(getAvailableCars().keySet().stream()
                 .filter(t->(matchingCars.contains(t))).collect(Collectors.toList()))
                 .orElseThrow(()-> new RentalCarException("No matching cars are found"));
+
+        if(availableCars.isEmpty()){
+            throw new RentalCarException("No matching cars as per the customer's preference is found");
+        }
 
         return availableCars;
 

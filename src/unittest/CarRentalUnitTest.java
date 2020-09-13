@@ -1,5 +1,6 @@
 package unittest;
 
+import exception.RentalCarException;
 import org.junit.Assert;
 import org.junit.Test;
 import pojo.Car;
@@ -18,7 +19,7 @@ public class CarRentalUnitTest {
     @Test
     public void testBookingDoneSuccessfully(){
 
-        Car car = new Car(01,"PA101","Honda","Civic");
+        Car car = new Car("Honda",5);
         //Booking request
         RentalRequest bookingRequest = new RentalRequest(new Date(),new Date(),car, RequestType.Booking);
         RentalCarService service = new RentalCarServiceImpl();
@@ -28,6 +29,31 @@ public class CarRentalUnitTest {
         Assert.assertEquals(response.getCar().getChasis(), "PA108");
         Assert.assertEquals(response.getCar().getModel(), "Accord");
 
+    }
+
+    @Test
+    public void testBookingCarWithMatchingCapacity(){
+
+        Car car = new Car(01,"PA106","Honda","Civic", 8);
+        //Booking request
+        RentalRequest bookingRequest = new RentalRequest(new Date(),new Date(),car, RequestType.Booking);
+        RentalCarService service = new RentalCarServiceImpl();
+        RentalResponse response = service.bookCar(bookingRequest);
+        Assert.assertEquals(response.getCar().getCarId(), 6);
+        Assert.assertEquals(response.getCar().getMake(), "Honda");
+        Assert.assertEquals(response.getCar().getChasis(), "PA106");
+        Assert.assertEquals(response.getCar().getModel(), "HSedan");
+
+    }
+
+    @Test (expected = RentalCarException.class)
+    public void testBookingCarWithOverCapacity(){
+
+        Car car = new Car(01,"PA106","Honda","Civic", 9);
+        //Booking request with over capacity
+        RentalRequest bookingRequest = new RentalRequest(new Date(),new Date(),car, RequestType.Booking);
+        RentalCarService service = new RentalCarServiceImpl();
+        RentalResponse response = service.bookCar(bookingRequest);
     }
 
     @Test
