@@ -20,11 +20,11 @@ public class Test {
         Task bookingTask = new Task(bookingReuest);
 
         //Cancel request
-        RentalRequest cancelRequest = new RentalRequest(new Date(),new Date(),car, RequestType.Cancel);
+        RentalRequest cancelRequest = new RentalRequest(new Date(),new Date(),car1, RequestType.Cancel);
         Task cancelTask = new Task(cancelRequest);
 
         //Drop request
-        RentalRequest dropRequest = new RentalRequest(new Date(),new Date(),car, RequestType.Drop);
+        RentalRequest dropRequest = new RentalRequest(new Date(),new Date(),car2, RequestType.Drop);
         Task dropTask = new Task(dropRequest);
 
         RequestProcessor processor = new RequestProcessor();
