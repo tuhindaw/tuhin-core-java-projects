@@ -7,6 +7,10 @@ import service.RentalCarService;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Basic car rental service
+ * Created by Tuhin Kumar Daw (tuhin.daw@gmail.com) on 09/13/2020
+ */
 public class RentalCarServiceImpl implements RentalCarService {
 
     static List<Car> allCars = new ArrayList<>();
