@@ -81,7 +81,7 @@ public class CarRentalUnitTest {
         Assert.assertEquals(anotherResponse.getCar().getCarId(), 6);
         Assert.assertEquals(anotherResponse.getCar().getMake(), "Honda");
         Assert.assertEquals(anotherResponse.getCar().getChasis(), "PA106");
-        Assert.assertEquals(anotherResponse.getCar().getModel(), "Civic");
+        Assert.assertEquals(anotherResponse.getCar().getModel(), "HSedan");
 
     }
 
