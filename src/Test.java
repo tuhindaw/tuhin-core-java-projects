@@ -15,7 +15,7 @@ public class Test {
         Car car1 = new Car("BMW",7);
         Car car2 = new Car("Audi",7);
 
-        //Booking request
+        // Booking request
         RentalRequest bookingReuest = new RentalRequest(new Date(),new Date(),car, RequestType.Booking);
         Task bookingTask = new Task(bookingReuest);
 
