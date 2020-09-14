@@ -14,6 +14,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Unit test class to test features of a basic car rental service
+ * Created by Tuhin Kumar Daw (tuhin.daw@gmail.com) on 09/13/2020
+ */
 public class CarRentalUnitTest {
 
     @Test
